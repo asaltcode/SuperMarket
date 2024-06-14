@@ -49,11 +49,13 @@ const OrderManagement = ({currentOrder, setCurrentOrder, orders, setOrders}) => 
 
   const handleDeleteOrder = async (orderId) => {
     try {
-      setOrders(orders.filter((order) => order._id !== orderId));
-    const {data} = await axios.delete(`${ApiUrl}/orders/${orderId}`)
-    if(!data){
-      toast.error("Order deleted")
-    }
+      if(confirm("Are you sure delete this order")){
+            setOrders(orders.filter((order) => order._id !== orderId));
+            const {data} = await axios.delete(`${ApiUrl}/orders/${orderId}`)
+        if(!data){
+          toast.error("Order deleted")
+        }
+      }
     } catch (error) {
       toast.error(error.message) 
     }

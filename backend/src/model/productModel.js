@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const ProductSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    price: { type: Number, required: true, immutable: true } // Immutable field
+    price: { type: Number, required: true,} // Immutable field
   },
   {
     timestamps: true,

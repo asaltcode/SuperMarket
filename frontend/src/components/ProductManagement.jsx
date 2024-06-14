@@ -216,9 +216,11 @@ const ProductManagement = ({ currentOrder, setCurrentOrder }) => {
                         {/* Unit price input field (read-only) */}
                         <input
                           className="form-control"
-                          type="text"
-                          readOnly
+                          type="text"                        
                           value={item.unitPrice}
+                          onChange={(e) =>
+                            handleItemChange(index, "unitPrice", e.target.value > 0 ? e.target.value : 1)
+                          }
                         />
                       </td>
                       <td>
@@ -238,10 +240,7 @@ const ProductManagement = ({ currentOrder, setCurrentOrder }) => {
                       </td>
                       <td>
                         {/* Amount input field (read-only) */}
-                        <input
-                          className="form-control"
-                          type="number"
-                          value={item.amount}
+                        <input  className="form-control"  type="number" value={item.amount}
                           readOnly
                         />
                       </td>
