@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ProductManagement from './components/ProductManagement';
 
 
-export const ApiUrl = "http://localhost:8000"
+export const ApiUrl = "https://super-market-backend-plum.vercel.app"
 
 const App = () => {
   const [orders, setOrders] = useState([]);
